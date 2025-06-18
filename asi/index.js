@@ -2,8 +2,6 @@
 console.log('Patrik Duch')
 console.log('Test')
 
-
-
 function test() {
     return
     {
