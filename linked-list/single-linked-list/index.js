@@ -40,6 +40,35 @@ class SingleLinkedList {
     }
 
 
+    remove(value) {
+
+        if (!this.head) return;
+
+
+        if (this.head.value == value) {
+            this.head = this.head.next;
+
+            if (!this.head) {
+                this.tail = null;
+            }
+        }
+
+
+        let current = this.head;
+
+        while (current.next && current.value != value) {
+
+            current = current.next;
+        }
+
+
+        if (current.next) {
+
+            current.next = current.next.next;
+        }
+    }
+
+
     contains(searchedValue) {
 
         let current = this.head;
@@ -65,9 +94,13 @@ linkedList.append("C");
 console.log(linkedList)
 
 
+linkedList.remove("B")
+
+
 linkedList.printList();
 
 
-const searchedItem = linkedList.contains("C");
+//const searchedItem = linkedList.contains("C");
 
-console.log(searchedItem);
+//console.log(searchedItem);
+
