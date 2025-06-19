@@ -1,28 +1,27 @@
 array = [1,2]
 
-function binarySearch(value) {
+function binarySearch(array, target) {
 
-    let left = 0;
-    let right = array.length-1;
+  let left = 0;
+  let right = array.length-1;
 
-    while(left <= right) {
-        const middle = Math.floor(left+right / 2);
+  while(left <= right) {
 
-        if (array[middle] == value) {
-            return array[middle];
-        } else if (array[middle] < value) {
+    const middle = Math.floor((left+right)/2);
 
-            left = middle + 1;
-        } else {
+    if (array[middle] == target) {
+       return array[middle];
+    } else if (target < array[middle]) {
 
-            right = middle -1;
-        }
+      right = middle -1;
+    } else {
+
+      left = middle +1;
     }
+  }
 
-    return null;
+  return -1;
 }
 
-
-const result = binarySearch(1);
-
+const result = binarySearch(array, 1);
 console.log(result);
