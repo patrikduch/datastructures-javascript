@@ -26,7 +26,6 @@ class SingleLinkedList {
 
 
      printList() {
-        
         let current = this.head;
         const values = [];
 
@@ -43,7 +42,6 @@ class SingleLinkedList {
     remove(value) {
 
         if (!this.head) return;
-
 
         if (this.head.value == value) {
             this.head = this.head.next;
